@@ -1,5 +1,10 @@
 let container = document.querySelector(".sketchPad");
-let sketchPad = container.offsetHeight;
+let color = document.querySelector(".color");
+let selectedColor = color.value;
+color.addEventListener("input", ()=>{
+    selectedColor = color.value;
+})
+
 function startGrid(input){
     container.innerHTML = ''; // Clear any existing grid
     let cellHeight = 100 / input; 
@@ -11,13 +16,24 @@ function startGrid(input){
             let row = document.createElement("div");
             row.classList.add('row');
             row.style.width = `${cellHeight}%`; 
+            row.addEventListener("mouseover", ()=>{
+                row.style.backgroundColor = selectedColor;
+            });
             column.appendChild(row);
         }
         container.appendChild(column);
     }
 }
-let input = document.getElementById("Grid").value;
+
 let submit = document.getElementById("mySubmit");
+let Eraser = document.getElementById("eraser");
+let clear = document.getElementById("clear");
+clear.addEventListener("click", ()=>{
+    container.innerHTML = ''; // Clear any existing grid
+})
+Eraser.addEventListener("click", ()=>{
+    selectedColor = `#FFFFFF`;
+});
 submit.addEventListener("click", function () {
     let input = parseInt(document.getElementById("Grid").value); // Parse input as number
     if (!isNaN(input) && input > 0) { // Validate input
