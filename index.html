@@ -5,41 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etch-Sketch-Game</title>
      <link rel="stylesheet" href="./style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
      <script src="javascript.js" defer></script>
 </head>
 <body>
    <div class="container">
         <div class="sub-container">
             <div class="input">
-                <label>
-                    Insert Grid Number
-                </label>
-                <input
-                type="number"
-                min="10"
-                max="100" 
-                id="Grid">
-                <button id="mySubmit">
-                    Submit
-                </button>
-                <br>
-                <button id ="eraser">
-                    Eraser
-                </button>
-                <button 
-                id="clear">
-                    clear
-                </button>
-                <button
-                id="random"
-                >
-                Random
-                </button>
-                <br>
-                <input
-                class="color"
-                type="color"
-                color="black"/>
+                <h1><i><em>Etch-Sketch</em></i></h1>
+                <h2>Insert Your Desired Grid Size</h2>
+                <div class="grid">
+                    <input
+                    type="number"
+                    min="10"
+                    max="100" 
+                    id="Grid">
+                    <button id="mySubmit">
+                        Create
+                    </button>
+                </div>
+                <div class="colors">
+                    <h2>Enter Your Desired Color</h2>
+                    <input
+                    class="color"
+                    type="color"
+                    color="white"/> 
+                </div>
+                <div class="buttons">
+                    <button id ="eraser">
+                        Eraser
+                    </button>
+                    <button 
+                    id="clear">
+                        Clear
+                    </button>
+                    <button
+                    id="random"
+                    >
+                    Random
+                    </button>
+                </div>
             </div>
             <div class="sketchPad">
             </div>
